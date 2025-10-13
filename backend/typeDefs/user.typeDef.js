@@ -37,4 +37,4 @@ const userTypeDef = `#graphql
     }
 `
 
-export default userTypeDef
+export default  userTypeDef
