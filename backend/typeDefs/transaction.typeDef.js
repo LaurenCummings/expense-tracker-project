@@ -9,4 +9,9 @@ const transactionTypeDef = `#graphql
         location: String
         date: String!
     }
+
+    type Query {
+        transaction: [Transaction!]
+        transaction(transactionId:ID!): Transaction
+    }
 `
