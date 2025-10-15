@@ -20,4 +20,13 @@ const transactionTypeDef = `#graphql
         updateTransaction(input: UpdateTransactionInput!): Transaction!
         deleteTransaction(transactionId:ID!): Transaction!
     }
+
+    input CreateTransactionInput {
+        description: String!
+        paymentType: String!
+        category: String!
+        amount: Float!
+        date: String!
+        location: String
+    }
 `
