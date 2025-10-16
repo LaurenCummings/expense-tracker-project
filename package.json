@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/LaurenCummings/expense-tracker-project#readme",
   "dependencies": {
-    "@apollo/server": "^5.0.0",
+    "@apollo/server": "^4.10.0",
     "@graphql-tools/merge": "^9.1.1",
     "bcryptjs": "^3.0.2",
     "connect-mongodb-session": "^5.0.0",
