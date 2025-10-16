@@ -9,6 +9,7 @@ import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHt
 import mergedResolvers from "./resolvers/index.js";
 import mergedTypeDefs from "./typeDefs/index.js";
 
+const app = express();
 const httpServer = http.createServer(app);
 
 const server = new ApolloServer({
@@ -18,4 +19,4 @@ const server = new ApolloServer({
 })
 
 
-console.log(`Server ready at ${url}`)
+console.log(`Server ready at `)
