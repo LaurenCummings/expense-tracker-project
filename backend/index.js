@@ -11,6 +11,8 @@ import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@as-integrations/express5";
 import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
 
+import { buildContext } from "graphql-passport";
+
 import mergedResolvers from "./resolvers/index.js";
 import mergedTypeDefs from "./typeDefs/index.js";
 
@@ -65,7 +67,7 @@ app.use(
     // expressMiddware accepts the same arguments:
     // an Apollo Server instance and optional configuration options
     expressMiddleware(server, {
-        context: async ({ req, res }) => ({ req, res }),
+        context: async ({ req, res }) => buildContext({ req, res }),
     }),
 );
 
