@@ -43,6 +43,10 @@ app.use(
     })
 )
 
+app.use(passport.initialize());
+
+app.use(passport.session());
+
 const server = new ApolloServer({
     typeDefs: mergedTypeDefs,
     resolvers: mergedResolvers,
