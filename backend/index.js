@@ -65,7 +65,7 @@ app.use(
     // expressMiddware accepts the same arguments:
     // an Apollo Server instance and optional configuration options
     expressMiddleware(server, {
-        context: async ({ req }) => ({ req }),
+        context: async ({ req, res }) => ({ req, res }),
     }),
 );
 
