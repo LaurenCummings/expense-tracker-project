@@ -3,6 +3,10 @@ import http from "http";
 import cors from "cors";
 import dotenv from "dotenv";
 
+import passport from "passport";
+import session from "express-session";
+import connectMongo from "connect-mongodb-session";
+
 import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@as-integrations/express5";
 import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHttpServer";
