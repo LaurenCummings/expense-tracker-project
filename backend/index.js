@@ -62,7 +62,10 @@ await server.start();
 // and our expressMiddleware function.
 app.use(
     '/',
-    cors(),
+    cors({
+        origin: "http://localhost:3000",
+        credentials: true,
+    }),
     express.json(),
     // expressMiddware accepts the same arguments:
     // an Apollo Server instance and optional configuration options
