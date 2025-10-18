@@ -21,6 +21,15 @@ dotenv.config();
 const app = express();
 const httpServer = http.createServer(app);
 
+const MongoDBStore = connectMongo(session);
+
+const store = new MongoDBStore({
+    uri: process.env.MONGO_URI,
+    collection: "sessions",
+})
+
+store.on("error", (err) => console.log(err));
+
 const server = new ApolloServer({
     typeDefs: mergedTypeDefs,
     resolvers: mergedResolvers,
