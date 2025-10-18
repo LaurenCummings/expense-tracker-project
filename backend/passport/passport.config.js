@@ -9,4 +9,14 @@ export const configurePassport = async () => {
         console.log("Serializing user");
         done(null, user.id)
     });
+
+    passport.deserializeUser(async (id, done) => {
+        console.log("Deserializing user");
+        try {
+            const user = await User.findById(id);
+            done(null, user);
+        } catch (err) {
+            done(err);
+        }
+    })
 };
