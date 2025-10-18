@@ -14,7 +14,7 @@ import { ApolloServerPluginDrainHttpServer } from "@apollo/server/plugin/drainHt
 import mergedResolvers from "./resolvers/index.js";
 import mergedTypeDefs from "./typeDefs/index.js";
 
-import { connectDB } from "./db/connectDB.js"
+import { connectDB } from "./db/connectDB.js";
 
 dotenv.config();
 
@@ -29,6 +29,19 @@ const store = new MongoDBStore({
 })
 
 store.on("error", (err) => console.log(err));
+
+app.use(
+    session({
+        secret: process.env.SESSION_SECRET,
+        resave: false, // this option specifies whether to save the session to the store on every request
+        saveUninitialized: false, // this option specifies whether to save unitialized sessions
+        cookie: {
+            maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
+            httpOnly: true, // this option prevents the Cross-Site Scripting (XSS) attacks
+        },
+        store: store
+    })
+)
 
 const server = new ApolloServer({
     typeDefs: mergedTypeDefs,
