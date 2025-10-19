@@ -48,7 +48,8 @@ const userResolver = {
                 await context.login(user);
                 return user;
             } catch (err) {
-
+                console.error("Error in login:", error);
+                throw new Error(error.message || "Internal server error");
             }
         }
     },
