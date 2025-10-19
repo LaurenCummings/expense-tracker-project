@@ -1,6 +1,11 @@
 import { users } from "../dummyData/data.js";
 
 const userResolver = {
+    Mutation: {
+        signUp: async(_, {input}, context) => {
+
+        }
+    },
     Query: {
         users: (_,_,{ req, res }) => {
             return users
@@ -9,7 +14,6 @@ const userResolver = {
             return users.find((user) => user._id === userId);
         }
     },
-    Mutation: {},
 };
 
 export default userResolver;
