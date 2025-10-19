@@ -1,4 +1,5 @@
 import { users } from "../dummyData/data.js";
+import User from "../models/user.model.js";
 
 const userResolver = {
     Mutation: {
@@ -9,6 +10,8 @@ const userResolver = {
                 if (!username || !name || !password || !gender) {
                     throw new Error("All fields are required");
                 }
+                const existingUser = await User.findOne({ username })
+
             } catch (err) {
 
             }
