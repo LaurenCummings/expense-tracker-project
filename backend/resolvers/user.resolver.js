@@ -51,6 +51,15 @@ const userResolver = {
                 console.error("Error in login:", err);
                 throw new Error(err.message || "Internal server error");
             }
+        },
+
+        logout: async(_, __, {}) => {
+            try {
+
+            } catch (err) {
+                console.error("Error in logout", err);
+                throw new Error(err.message || "Internal server error");
+            }
         }
     },
     Query: {
