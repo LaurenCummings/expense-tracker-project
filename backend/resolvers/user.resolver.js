@@ -29,6 +29,11 @@ const userResolver = {
                     gender,
                     profilePicture: gender === "male" ? boyProfilePic : girlProfilePic,
                 })
+
+                await newUser.save();
+                await context.login(newUser);
+                return newUser;
+                
             } catch (err) {
 
             }
