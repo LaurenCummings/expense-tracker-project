@@ -11,6 +11,9 @@ const userResolver = {
                     throw new Error("All fields are required");
                 }
                 const existingUser = await User.findOne({ username })
+                if (existingUser) {
+                    throw new Error("User already exists");
+                }
 
             } catch (err) {
 
