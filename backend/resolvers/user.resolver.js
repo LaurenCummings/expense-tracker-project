@@ -48,7 +48,7 @@ const userResolver = {
                 await context.login(user);
                 return user;
             } catch (err) {
-                console.error("Error in login:", error);
+                console.error("Error in login:", err);
                 throw new Error(err.message || "Internal server error");
             }
         }
