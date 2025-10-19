@@ -49,7 +49,7 @@ const userResolver = {
                 return user;
             } catch (err) {
                 console.error("Error in login:", error);
-                throw new Error(error.message || "Internal server error");
+                throw new Error(err.message || "Internal server error");
             }
         }
     },
