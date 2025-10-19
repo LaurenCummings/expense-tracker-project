@@ -3,7 +3,15 @@ import { users } from "../dummyData/data.js";
 const userResolver = {
     Mutation: {
         signUp: async(_, {input}, context) => {
+            try {
+                const { username, name, password, gender } = input;
 
+                if (!username || !name || !password || !gender) {
+                    throw new Error("All fields are required");
+                }
+            } catch (err) {
+
+            }
         }
     },
     Query: {
