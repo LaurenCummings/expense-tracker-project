@@ -33,9 +33,10 @@ const userResolver = {
                 await newUser.save();
                 await context.login(newUser);
                 return newUser;
-                
-            } catch (err) {
 
+            } catch (err) {
+                console.error("Error in signUp: ", err);
+                throw new Error(err.message || "Internal server error");
             }
         }
     },
