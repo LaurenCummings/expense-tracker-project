@@ -77,8 +77,14 @@ const userResolver = {
                 throw new Error("internal server error");
             }
         },
-        user: (_, { userId }) => {
-            return users.find((user) => user._id === userId);
+        user: async (_, {userId}) => {
+            try {
+                const user = await User.findById(userId);
+                return user;
+            } catch (err) {
+                console.error("Error in user query:", err);
+                throw new Error(err.message || "Error getting user");
+            }
         }
     },
 };
