@@ -7,11 +7,13 @@ const transactionResolver = {
                 if (!context.getUser()) throw new Error("Unauthorized");
                 const userId = await context.getUser()._id;
 
-                const transactions = await Transaction.find({ user: userId });
+                const transactions = await Transaction.find({ userId: userId });
+                return transactions;
             } catch (err) {
-
+                console.error("Error getting transactions:", err);
+                throw new Error("Error getting transactions");
             }
-        }
+        },
     },
     Mutation: {},
 };
