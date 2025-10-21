@@ -85,7 +85,8 @@ const userResolver = {
                 console.error("Error in user query:", err);
                 throw new Error(err.message || "Error getting user");
             }
-        }
+        },
+        // TODO => ADD USER/TRANSACTION RELATIONSHIP
     },
 };
 
