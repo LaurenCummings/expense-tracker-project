@@ -58,6 +58,7 @@ const transactionResolver = {
             }
         }
     },
+    // TODO => ADD TRANSACTION/USER RELATIONSHIP
 };
 
 export default transactionResolver;
