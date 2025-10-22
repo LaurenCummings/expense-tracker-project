@@ -48,8 +48,14 @@ const transactionResolver = {
                 throw new Error("Error updating transaction");
             }
         },
-        deleteTransaction: async (parent, args, context) => {
-
+        deleteTransaction: async (_, { transactionId }) => {
+            try {
+                const deletedTransaction = await Transaction.findByIdAndDelete(transactionId);
+                return deletedTransaction;
+            } catch (err) {
+                console.error("Error deleting transaction:", err);
+                throw new Error("Error deleting transaction");
+            }
         }
     },
 };
