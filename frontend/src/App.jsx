@@ -4,11 +4,13 @@ import LoginPage from "../src/pages/LoginPage";
 import SignUpPage from "../src/pages/SignUpPage";
 import TransactionPage from "../src/pages/TransactionPage";
 import NotFoundPage from "../src/pages/NotFoundPage";
+import Header from "./components/ui/Header";
 
 function App() {
   const authUser = true;
   return (
     <>
+      { authUser && <Header /> }
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
