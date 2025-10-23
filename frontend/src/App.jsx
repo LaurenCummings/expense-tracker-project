@@ -6,7 +6,7 @@ import TransactionPage from "../src/pages/TransactionPage";
 import NotFoundPage from "../src/pages/NotFoundPage";
 
 function App() {
-
+  const authUser = true;
   return (
     <>
       <Routes>
