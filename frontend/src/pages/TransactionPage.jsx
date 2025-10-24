@@ -23,7 +23,7 @@ const TransactionPage = () => {
 		}));
 	};
 
-	if (true) return <TransactionFormSkeleton />;
+	// if (loading) return <TransactionFormSkeleton />;
 
 	return (
 		<div className='h-screen max-w-4xl mx-auto flex flex-col items-center'>
