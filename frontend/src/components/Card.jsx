@@ -20,7 +20,7 @@ const Card = ({ cardType }) => {
 		<div className={`rounded-md p-4 bg-gradient-to-br ${cardClass}`}>
 			<div className='flex flex-col gap-3'>
 				<div className='flex flex-row items-center justify-between'>
-					<h2 className='text-lg font-bold text-white'>Saving</h2>
+					<h2 className='text-lg font-bold text-white'>{cardType}</h2>
 					<div className='flex items-center gap-2'>
 						<FaTrash className={"cursor-pointer"} />
 						<Link to={`/transaction/123`}>
