@@ -4,11 +4,12 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from "react-router-dom";
 import GridBackground from "./components/ui/GridBackground.jsx";
-import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
+import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client/react";
 
 const client = new ApolloClient({
   // TODO => Update the uri on production
-  uri: "http://localhost:4000/graphql", // The URL of our GraphQL server
+  link: "http://localhost:4000/graphql", // The URL of our GraphQL server
   cache: new InMemoryCache(), // Apollo Client uses to cache query results after fetching them
   credentials: "include", // This tells Apollo Client to send cookies along with every request to the server
 });
