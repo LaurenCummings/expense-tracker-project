@@ -105,7 +105,6 @@ const SignUpPage = () => {
 									disabled={loading}
 								>
 									{ loading ? "Loading..." : "Sign Up" }
-									Sign Up
 								</button>
 							</div>
 						</form>
