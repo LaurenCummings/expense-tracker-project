@@ -13,7 +13,7 @@ const SignUpPage = () => {
 		gender: "",
 	});
 
-
+	const [signup, loading, error] = useMutation(SIGN_UP)
 
 	const handleChange = (e) => {
 		const { name, value, type } = e.target;
