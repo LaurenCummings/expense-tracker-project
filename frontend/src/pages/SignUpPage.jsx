@@ -4,6 +4,7 @@ import RadioButton from "../components/RadioButton";
 import InputField from "../components/InputField";
 import { useMutation } from "@apollo/client";
 import { SIGN_UP } from "../graphql/mutations/user.mutation";
+import toast from "react-hot-toast";
 
 const SignUpPage = () => {
 	const [signUpData, setSignUpData] = useState({
@@ -33,7 +34,16 @@ const SignUpPage = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log(signUpData);
+		try {
+			await signup({
+				variables:{
+					input: signUpData
+				}
+			})
+		} catch (err) {
+			console.error("Error:", error);
+			toast.error(error.message);
+		}
 	};
 
 	return (
