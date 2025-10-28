@@ -16,7 +16,7 @@ function App() {
   console.log("Error:", error);
   return (
     <>
-      { data.authUser && <Header /> }
+      { data?.authUser && <Header /> }
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
