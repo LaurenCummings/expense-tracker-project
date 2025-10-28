@@ -37,8 +37,8 @@ const SignUpPage = () => {
 		try {
 			await signup({
 				variables:{
-					input: signUpData
-				}
+					input: signUpData,
+				},
 			})
 		} catch (err) {
 			console.error("Error:", err);
