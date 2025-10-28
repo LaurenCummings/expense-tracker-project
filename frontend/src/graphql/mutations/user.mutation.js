@@ -8,4 +8,4 @@ export const SIGN_UP = gql`
             username
         }
     }
-`
+`;
