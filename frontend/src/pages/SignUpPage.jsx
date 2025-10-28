@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import RadioButton from "../components/RadioButton";
 import InputField from "../components/InputField";
+import { useMutation } from "@apollo/client";
+import { SIGN_UP } from "../graphql/mutations/user.mutation";
 
 const SignUpPage = () => {
 	const [signUpData, setSignUpData] = useState({
@@ -10,6 +12,8 @@ const SignUpPage = () => {
 		password: "",
 		gender: "",
 	});
+
+
 
 	const handleChange = (e) => {
 		const { name, value, type } = e.target;
