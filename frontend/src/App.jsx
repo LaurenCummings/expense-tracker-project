@@ -9,7 +9,6 @@ import { useQuery } from "@apollo/client/react";
 import { GET_AUTHENTICATED_USER } from "./graphql/queries/user.query";
 
 function App() {
-  const authUser = true;
   const { loading, data, error } = useQuery(GET_AUTHENTICATED_USER);
 
   console.log("Loading:", loading);
@@ -17,7 +16,7 @@ function App() {
   console.log("Error:", error);
   return (
     <>
-      { authUser && <Header /> }
+      { data.authUser && <Header /> }
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
