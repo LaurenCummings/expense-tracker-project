@@ -19,7 +19,7 @@ function App() {
     <>
       { data?.authUser && <Header /> }
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={data.authUser ? <HomePage /> : <Navigate to="/login" />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/transaction/:id" element={<TransactionPage />} />
