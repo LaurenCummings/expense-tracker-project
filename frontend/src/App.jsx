@@ -22,7 +22,7 @@ function App() {
         <Route path="/" element={data.authUser ? <HomePage /> : <Navigate to="/login" />} />
         <Route path="/login" element={!data.authUser ? <LoginPage /> : <Navigate to="/" />} />
         <Route path="/signup" element={!data.authUser ? <SignUpPage /> : <Navigate to="/" />} />
-        <Route path="/transaction/:id" element={<TransactionPage />} />
+        <Route path="/transaction/:id" element={data.authUser ? <TransactionPage /> : <Navigate to="/" />} />
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Toaster />
