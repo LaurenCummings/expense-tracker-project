@@ -20,7 +20,7 @@ function App() {
       { data?.authUser && <Header /> }
       <Routes>
         <Route path="/" element={data.authUser ? <HomePage /> : <Navigate to="/login" />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={!data.authUser ? <LoginPage /> : <Navigate to="/" />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/transaction/:id" element={<TransactionPage />} />
         <Route path="*" element={<NotFoundPage />} />
