@@ -5,6 +5,7 @@ import Cards from "../components/Cards";
 import TransactionForm from "../components/TransactionForm";
 
 import { MdLogout } from "react-icons/md";
+import { toast } from "react-hot-toast";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -29,7 +30,7 @@ const HomePage = () => {
 		try {
 
 		} catch (err) {
-			
+
 		}
 	};
 
