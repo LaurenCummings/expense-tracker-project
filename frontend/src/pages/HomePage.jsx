@@ -6,6 +6,7 @@ import TransactionForm from "../components/TransactionForm";
 
 import { MdLogout } from "react-icons/md";
 import toast from "react-hot-toast";
+import { useMutation } from "@apollo/client/react";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -26,6 +27,8 @@ const HomePage = () => {
 		],
 	};
 
+	const [logout, {loading}] = useMutation(LOGOUT);
+
 	const handleLogout = async () => {
 		try {
 
@@ -34,8 +37,6 @@ const HomePage = () => {
 			toast.error(err.message);
 		}
 	};
-
-	const loading = false;
 
 	return (
 		<>
