@@ -53,7 +53,7 @@ const userResolver = {
             }
         },
 
-        logout: async(_, __, {}) => {
+        logout: async(_, __, context) => {
             try {
                 await context.logout();
                 req.session.destroy((err) => {
