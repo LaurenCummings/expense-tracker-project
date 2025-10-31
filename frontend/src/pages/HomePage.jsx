@@ -25,8 +25,12 @@ const HomePage = () => {
 		],
 	};
 
-	const handleLogout = () => {
-		console.log("Logging out...");
+	const handleLogout = async () => {
+		try {
+
+		} catch (err) {
+			
+		}
 	};
 
 	const loading = false;
