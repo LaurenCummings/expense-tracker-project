@@ -59,7 +59,7 @@ const userResolver = {
                 context.req.session.destroy((err) => {
                     if (err) throw err;
                 })
-                res.clearCookie("connect.sid");
+                context.res.clearCookie("connect.sid");
                 return { message: "Logged out successfully" };
             } catch (err) {
                 console.error("Error in logout", err);
