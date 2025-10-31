@@ -30,7 +30,8 @@ const HomePage = () => {
 		try {
 
 		} catch (err) {
-
+			console.error("Error logging out:", err);
+			toast.error(err.message);
 		}
 	};
 
