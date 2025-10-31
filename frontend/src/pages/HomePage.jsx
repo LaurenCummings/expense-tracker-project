@@ -31,7 +31,7 @@ const HomePage = () => {
 
 	const handleLogout = async () => {
 		try {
-
+			await logout()
 		} catch (err) {
 			console.error("Error logging out:", err);
 			toast.error(err.message);
