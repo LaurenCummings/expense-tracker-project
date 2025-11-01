@@ -61,7 +61,7 @@ const LoginPage = () => {
 									'
 									disabled={loading}
 								>
-									Login
+									{ loading ? "Loading..." : "Login" }
 								</button>
 							</div>
 						</form>
