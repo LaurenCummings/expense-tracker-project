@@ -158,7 +158,7 @@ const TransactionForm = () => {
 				type='submit'
 				disabled={loading}
 			>
-				Add Transaction
+				{ loading ? "Loading..." : "Add Transaction" }
 			</button>
 		</form>
 	);
