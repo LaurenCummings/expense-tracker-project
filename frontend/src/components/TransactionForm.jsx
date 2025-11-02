@@ -1,6 +1,10 @@
 import { useMutation } from "@apollo/client/react";
+import { CREATE_TRANSACTION } from "../graphql/mutations/transaction.mutation";
 
 const TransactionForm = () => {
+
+	const [createTransaction, { loading, error }] = useMutation(CREATE_TRANSACTION);
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
