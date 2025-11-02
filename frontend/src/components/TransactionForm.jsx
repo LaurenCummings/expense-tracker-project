@@ -23,9 +23,9 @@ const TransactionForm = () => {
 			await createTransaction({ variables: { input: transactionData }})
 
 			form.reset();
-			toast.success("Transaction added successfully");
+			toast.success("Transaction created successfully");
 		} catch (err) {
-
+			toast.error(err.message);
 		}
 	};
 
