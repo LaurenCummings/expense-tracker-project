@@ -49,7 +49,7 @@ const Card = ({ transaction }) => {
 				</p>
 				<p className='text-white flex items-center gap-1'>
 					<FaLocationDot />
-					Location: New York
+					Location: {location || "N/A"}
 				</p>
 				<div className='flex justify-between items-center'>
 					<p className='text-xs text-black font-bold'>21 Sep, 2001</p>
