@@ -1,5 +1,6 @@
 import { GET_TRANSACTIONS } from "../graphql/queries/transaction.query";
 import Card from "./Card";
+import { useQuery } from "@apollo/client/react";
 
 const Cards = () => {
 	const { data, loading, error } = useQuery(GET_TRANSACTIONS);
