@@ -17,6 +17,9 @@ const Cards = () => {
 					<Card key={transaction._id} transaction={transaction} />
 				))}
 			</div>
+			{!loading && data?.transactions?.length === 0 && (
+				<p className="text-2xl font-bold text-center w-full">No transaction history found.</p>
+			)}
 		</div>
 	);
 };
