@@ -12,4 +12,4 @@ export const GET_TRANSACTIONS = gql`
             date
         }
     }
-`
+`;
