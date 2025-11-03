@@ -41,7 +41,7 @@ const Card = ({ transaction }) => {
 				</p>
 				<p className='text-white flex items-center gap-1'>
 					<MdOutlinePayments />
-					Payment Type: Cash
+					Payment Type: {paymentType}
 				</p>
 				<p className='text-white flex items-center gap-1'>
 					<FaSackDollar />
