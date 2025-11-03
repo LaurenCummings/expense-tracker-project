@@ -13,14 +13,19 @@ const categoryColorMap = {
 	// Add more categories and corresponding color classes as needed
 };
 
-const Card = ({ cardType }) => {
-	const cardClass = categoryColorMap[cardType];
+const Card = ({ transaction }) => {
+	let { category, amount, location, date, paymentType, description } = transaction;
+
+	description = description[0]?.toUpperCase() + description.slice(1);
+	category = category[0]?.toUpperCase() + category.slice(1);
+
+	const cardClass = categoryColorMap[paymentType];
 
 	return (
 		<div className={`rounded-md p-4 bg-gradient-to-br ${cardClass}`}>
 			<div className='flex flex-col gap-3'>
 				<div className='flex flex-row items-center justify-between'>
-					<h2 className='text-lg font-bold text-white'>{cardType.charAt(0).toUpperCase() + cardType.slice(1)}</h2>
+					<h2 className='text-lg font-bold text-white'>Salary</h2>
 					<div className='flex items-center gap-2'>
 						<FaTrash className={"cursor-pointer"} />
 						<Link to={`/transaction/123`}>
