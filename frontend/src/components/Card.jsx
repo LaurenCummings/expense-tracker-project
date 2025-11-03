@@ -5,6 +5,7 @@ import { FaSackDollar } from "react-icons/fa6";
 import { FaTrash } from "react-icons/fa";
 import { HiPencilAlt } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { formatDate } from "../utils/formatDate";
 
 const categoryColorMap = {
 	saving: "from-green-700 to-green-400",
@@ -18,8 +19,9 @@ const Card = ({ transaction }) => {
 
 	description = description[0]?.toUpperCase() + description.slice(1);
 	category = category[0]?.toUpperCase() + category.slice(1);
+	const formattedDate = formatDate(date);
 
-	const cardClass = categoryColorMap[paymentType];
+	const cardClass = categoryColorMap[category];
 
 	return (
 		<div className={`rounded-md p-4 bg-gradient-to-br ${cardClass}`}>
