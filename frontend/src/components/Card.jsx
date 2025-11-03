@@ -37,7 +37,7 @@ const Card = ({ transaction }) => {
 				</div>
 				<p className='text-white flex items-center gap-1'>
 					<BsCardText />
-					Description: Salary
+					Description: {description}
 				</p>
 				<p className='text-white flex items-center gap-1'>
 					<MdOutlinePayments />
