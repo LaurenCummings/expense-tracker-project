@@ -30,9 +30,11 @@ const Card = ({ transaction }) => {
 
 	const handleDelete = async () => {
 		try {
-
+			await deleteTransaction({ variables: { transactionId: transaction._id} });
+			toast.success("Transaction deleted successfully");
 		} catch (err) {
-
+			console.error("Error deleting transaction:", err);
+			toast.error(err.message);
 		}
 	}
 
