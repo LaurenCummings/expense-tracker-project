@@ -45,7 +45,7 @@ const Card = ({ transaction }) => {
 					<h2 className='text-lg font-bold text-white'>{category}</h2>
 					<div className='flex items-center gap-2'>
 						{ !loading && <FaTrash className={"cursor-pointer"} onClick={handleDelete} /> }
-						{ loading && <div className="w-6 h-6 border-t-2 border-b-2 mx-2 rounded-full animate-spin"></div> }
+						{ loading && <div className="w-6 h-6 border-t-2 border-b-2 rounded-full animate-spin"></div> }
 						<Link to={`/transaction/123`}>
 							<HiPencilAlt className='cursor-pointer' size={20} />
 						</Link>
