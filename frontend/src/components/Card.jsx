@@ -52,7 +52,7 @@ const Card = ({ transaction }) => {
 					Location: {location || "N/A"}
 				</p>
 				<div className='flex justify-between items-center'>
-					<p className='text-xs text-black font-bold'>21 Sep, 2001</p>
+					<p className='text-xs text-white font-bold'>{formattedDate}</p>
 					<img
 						src={"https://tecdn.b-cdn.net/img/new/avatars/2.webp"}
 						className='h-8 w-8 border rounded-full'
