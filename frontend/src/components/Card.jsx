@@ -6,6 +6,7 @@ import { FaTrash } from "react-icons/fa";
 import { HiPencilAlt } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { formatDate } from "../utils/formatDate";
+import toast from "react-hot-toast";
 
 const categoryColorMap = {
 	saving: "from-green-700 to-green-400",
@@ -22,13 +23,21 @@ const Card = ({ transaction }) => {
 	category = category[0]?.toUpperCase() + category.slice(1);
 	const formattedDate = formatDate(date);
 
+	const handleDelete = async () => {
+		try {
+
+		} catch (err) {
+
+		}
+	}
+
 	return (
 		<div className={`rounded-md p-4 bg-gradient-to-br ${cardClass}`}>
 			<div className='flex flex-col gap-3'>
 				<div className='flex flex-row items-center justify-between'>
 					<h2 className='text-lg font-bold text-white'>{category}</h2>
 					<div className='flex items-center gap-2'>
-						<FaTrash className={"cursor-pointer"} />
+						<FaTrash className={"cursor-pointer"} onClick={handleDelete} />
 						<Link to={`/transaction/123`}>
 							<HiPencilAlt className='cursor-pointer' size={20} />
 						</Link>
