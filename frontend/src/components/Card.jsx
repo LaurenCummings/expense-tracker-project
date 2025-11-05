@@ -16,12 +16,11 @@ const categoryColorMap = {
 
 const Card = ({ transaction }) => {
 	let { category, amount, location, date, paymentType, description } = transaction;
+	const cardClass = categoryColorMap[category];
 
 	description = description[0]?.toUpperCase() + description.slice(1);
 	category = category[0]?.toUpperCase() + category.slice(1);
 	const formattedDate = formatDate(date);
-
-	const cardClass = categoryColorMap[category];
 
 	return (
 		<div className={`rounded-md p-4 bg-gradient-to-br ${cardClass}`}>
