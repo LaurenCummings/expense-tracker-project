@@ -7,6 +7,8 @@ import { HiPencilAlt } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { formatDate } from "../utils/formatDate";
 import toast from "react-hot-toast";
+import { DELETE_TRANSACTION } from "../graphql/mutations/transaction.mutation";
+import { useMutation } from "@apollo/client/react";
 
 const categoryColorMap = {
 	saving: "from-green-700 to-green-400",
@@ -18,6 +20,9 @@ const categoryColorMap = {
 const Card = ({ transaction }) => {
 	let { category, amount, location, date, paymentType, description } = transaction;
 	const cardClass = categoryColorMap[category];
+	const [deleteTransaction, {loading}] = useMutation(DELETE_TRANSACTION, {
+		refetchQueries: ["GetTransactions"]
+	})
 
 	description = description[0]?.toUpperCase() + description.slice(1);
 	category = category[0]?.toUpperCase() + category.slice(1);
