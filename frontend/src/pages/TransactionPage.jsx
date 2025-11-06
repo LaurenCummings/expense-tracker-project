@@ -34,12 +34,12 @@ const TransactionPage = () => {
 	useEffect(() => {
 		if (data) {
 			setFormData({
-				description: data?.transaction?.description || "",
-				paymentType: data?.transaction?.paymentType || "",
-				category: data?.transaction?.category || "",
-				amount: data?.transaction?.amount || "",
-				location: data?.transaction?.location || "",
-				date: data?.transaction?.date || "",
+				description: data?.transaction?.description,
+				paymentType: data?.transaction?.paymentType,
+				category: data?.transaction?.category,
+				amount: data?.transaction?.amount,
+				location: data?.transaction?.location,
+				date: data?.transaction?.date,
 			});
 		}
 	}, [data])
