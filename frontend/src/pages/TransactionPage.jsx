@@ -11,7 +11,7 @@ const TransactionPage = () => {
 	})
 	console.log("Transaction data", data);
 	const [formData, setFormData] = useState({
-		description: "",
+		description: data?.transaction?.description || "",
 		paymentType: "",
 		category: "",
 		amount: "",
