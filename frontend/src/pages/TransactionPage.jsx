@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import TransactionFormSkeleton from "../components/skeletons/TransactionFormSkeleton";
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client/react";
@@ -30,6 +30,19 @@ const TransactionPage = () => {
 			[name]: value,
 		}));
 	};
+
+	useEffect(() => {
+		if (data) {
+			setFormData({
+				description: data?.transaction?.description || "",
+				paymentType: data?.transaction?.paymentType || "",
+				category: data?.transaction?.category || "",
+				amount: data?.transaction?.amount || "",
+				location: data?.transaction?.location || "",
+				date: data?.transaction?.date || "",
+			});
+		}
+	}, [data])
 
 	// if (loading) return <TransactionFormSkeleton />;
 
