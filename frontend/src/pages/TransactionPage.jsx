@@ -6,7 +6,9 @@ import { GET_TRANSACTION } from "../graphql/queries/transaction.query";
 
 const TransactionPage = () => {
 	const { id } = useParams();
-
+	const { loading, data } = useQuery(GET_TRANSACTION, {
+		variables: { transactionId:id },
+	})
 	const [formData, setFormData] = useState({
 		description: "",
 		paymentType: "",
