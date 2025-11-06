@@ -12,11 +12,11 @@ const TransactionPage = () => {
 	console.log("Transaction data", data);
 	const [formData, setFormData] = useState({
 		description: data?.transaction?.description || "",
-		paymentType: "",
-		category: "",
-		amount: "",
-		location: "",
-		date: "",
+		paymentType: data?.transaction?.paymentType || "",
+		category: data?.transaction?.category || "",
+		amount: data?.transaction?.amount || "",
+		location: data?.transaction?.location || "",
+		date: data?.transaction?.date || "",
 	});
 
 	const handleSubmit = async (e) => {
