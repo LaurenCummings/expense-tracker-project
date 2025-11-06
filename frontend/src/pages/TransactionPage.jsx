@@ -1,10 +1,12 @@
 import { useState } from "react";
 import TransactionFormSkeleton from "../components/skeletons/TransactionFormSkeleton";
 import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client/react";
+import { GET_TRANSACTION } from "../graphql/queries/transaction.query";
 
 const TransactionPage = () => {
 	const { id } = useParams();
-	
+
 	const [formData, setFormData] = useState({
 		description: "",
 		paymentType: "",
