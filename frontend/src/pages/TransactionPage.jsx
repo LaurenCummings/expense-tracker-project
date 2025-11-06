@@ -7,7 +7,7 @@ import { GET_TRANSACTION } from "../graphql/queries/transaction.query";
 const TransactionPage = () => {
 	const { id } = useParams();
 	const { loading, data } = useQuery(GET_TRANSACTION, {
-		variables: { transactionId:id },
+		variables: { id: id },
 	})
 	console.log("Transaction data", data);
 	const [formData, setFormData] = useState({
