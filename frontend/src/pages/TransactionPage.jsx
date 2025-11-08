@@ -218,7 +218,7 @@ const TransactionPage = () => {
 					type='submit'
 					disabled={loadingUpdate}
 				>
-					Update Transaction
+					{ loadingUpdate ? "Updating..." : "Update Transaction" }
 				</button>
 			</form>
 		</div>
