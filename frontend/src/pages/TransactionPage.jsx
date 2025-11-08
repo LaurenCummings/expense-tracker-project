@@ -24,7 +24,17 @@ const TransactionPage = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log("formData", formData);
+		try {
+			await updateTransaction({
+				variables: {
+					input: {
+						...formData,
+					}
+				}
+			})
+		} catch (error) {
+
+		}
 	};
 	const handleInputChange = (e) => {
 		const { name, value } = e.target;
