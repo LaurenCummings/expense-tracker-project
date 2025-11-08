@@ -37,8 +37,8 @@ const TransactionPage = () => {
 				}
 			})
 			toast.success("Transaction updated successfully");
-		} catch (error) {
-
+		} catch (err) {
+			toast.error(err.message);
 		}
 	};
 	const handleInputChange = (e) => {
