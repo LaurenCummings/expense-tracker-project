@@ -30,6 +30,8 @@ const TransactionPage = () => {
 				variables: {
 					input: {
 						...formData,
+						amount,
+						transactionId: id
 					}
 				}
 			})
