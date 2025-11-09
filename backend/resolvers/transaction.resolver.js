@@ -23,7 +23,9 @@ const transactionResolver = {
                 throw new Error("Error getting transaction");
             }
         },
-        // TODO => Add categoryStatistics query
+        categoryStatistics: async (_, __, context) => {
+            if (!context.getUser()) throw new Error("Unauthorized");
+        },
     },
     Mutation: {
         createTransaction: async (_, { input }, context) => {
