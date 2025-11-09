@@ -9,10 +9,15 @@ import toast from "react-hot-toast";
 import { useMutation, useQuery } from "@apollo/client/react";
 import { LOGOUT } from "../graphql/mutations/user.mutation";
 import { GET_TRANSACTION_STATISTICS } from "../graphql/queries/transaction.query";
+import { GET_AUTHENTICATED_USER } from "../graphql/queries/user.query";
+
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const HomePage = () => {
+	const { data } = useQuery(GET_TRANSACTION_STATISTICS);
+	console.log("categoryStatistics", data);
+
 	const chartData = {
 		labels: ["Saving", "Expense", "Investment"],
 		datasets: [
@@ -32,9 +37,6 @@ const HomePage = () => {
 	const [logout, {loading, client}] = useMutation(LOGOUT, {
 		refetchQueries: ["GetAuthenticatedUser"],
 	});
-
-	const { data } = useQuery(GET_TRANSACTION_STATISTICS);
-	console.log("category statistic:", data);
 
 	const handleLogout = async () => {
 		try {
