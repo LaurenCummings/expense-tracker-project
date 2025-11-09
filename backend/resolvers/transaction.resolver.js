@@ -25,21 +25,25 @@ const transactionResolver = {
             }
         },
         categoryStatistics: async (_, __, context) => {
-            console.log('here');
-            if (!context.getUser()) throw new Error("Unauthorized");
-            
-            const userId = await context.getUser()._id;
-            const transactions = await Transaction.find({ userId: userId });
-            const categoryMap = {};
+            try {
+                if (!context.getUser()) throw new Error("Unauthorized");
+                
+                const userId = await context.getUser()._id;
+                const transactions = await Transaction.find({ userId: userId });
+                const categoryMap = {};
 
-            transactions.forEach((transaction) => {
-                if (!categoryMap[transaction.category]) {
-                    categoryMap[transaction.category] = 0;
-                }
-                categoryMap[transaction.category] += transaction.amount;
-            });
+                transactions.forEach((transaction) => {
+                    if (!categoryMap[transaction.category]) {
+                        categoryMap[transaction.category] = 0;
+                    }
+                    categoryMap[transaction.category] += transaction.amount;
+                });
 
-            return Object.entries(categoryMap).map(([category, totalAmount]) => ({ category, totalAmount }));
+                return Object.entries(categoryMap).map(([category, totalAmount]) => ({ category, totalAmount }));                
+            } catch (err) {
+                console.error("Error getting transaction statistics:", err);
+                throw new Error("Error getting transaction statistics");
+            }
         },
     },
     Mutation: {
