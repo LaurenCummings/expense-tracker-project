@@ -28,7 +28,7 @@ const transactionResolver = {
             if (!context.getUser()) throw new Error("Unauthorized");
             
             const userId = await context.getUser()._id;
-            const transactions = await Transaction.find({ userId });
+            const transactions = await Transaction.find({ userId: userId });
             const categoryMap = {};
 
             transactions.forEach((transaction) => {
@@ -38,7 +38,7 @@ const transactionResolver = {
                 categoryMap[transaction.category] += transaction.amount;
             })
 
-            console.log(categoryMap)
+            console.log("anything")
 
             return Object.entries(categoryMap).map(([category, totalAmount]) => ({ category, totalAmount }));
         },
