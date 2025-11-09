@@ -5,6 +5,7 @@ import { useMutation, useQuery } from "@apollo/client/react";
 import { GET_TRANSACTION } from "../graphql/queries/transaction.query";
 import { UPDATE_TRANSACTION } from "../graphql/mutations/transaction.mutation";
 import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const TransactionPage = () => {
 	const { id } = useParams();
