@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const TransactionPage = () => {
+	const navigate = useNavigate();
 	const { id } = useParams();
 	const { loading, data } = useQuery(GET_TRANSACTION, {
 		variables: { id: id },
