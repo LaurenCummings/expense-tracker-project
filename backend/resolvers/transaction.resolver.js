@@ -25,7 +25,6 @@ const transactionResolver = {
             }
         },
         categoryStatistics: async (_, __, context) => {
-            console.log("MESSAGE");
             try {
                 if (!context.getUser()) throw new Error("Unauthorized");
                 

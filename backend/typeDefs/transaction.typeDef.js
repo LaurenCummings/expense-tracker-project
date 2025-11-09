@@ -23,7 +23,7 @@ const transactionTypeDef = `#graphql
     }
 
     type CategoryStatistics {
-        catergory: String!
+        category: String!
         totalAmount: Float!
     }
 
