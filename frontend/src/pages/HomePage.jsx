@@ -33,7 +33,7 @@ const HomePage = () => {
 		refetchQueries: ["GetAuthenticatedUser"],
 	});
 
-	
+	const { data } = useQuery(GET_TRANSACTION_STATISTICS);
 
 	const handleLogout = async () => {
 		try {
