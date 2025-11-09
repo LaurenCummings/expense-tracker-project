@@ -1,4 +1,5 @@
 import Transaction from "../models/transaction.model.js";
+import User from "../models/user.model.js";
 
 const transactionResolver = {
     Query: {
@@ -37,7 +38,7 @@ const transactionResolver = {
                 categoryMap[transaction.category] += transaction.amount;
             })
 
-            return Object.entries(categoryMap).map(([category, amount]) => ({ category, amount }));
+            return Object.entries(categoryMap).map(([category, totalAmount]) => ({ category, totalAmount }));
         },
     },
     Mutation: {
