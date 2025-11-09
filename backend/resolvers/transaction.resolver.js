@@ -27,6 +27,7 @@ const transactionResolver = {
             if (!context.getUser()) throw new Error("Unauthorized");
             
             const userId = context.getUser()._id;
+            const transactions = await Transaction.find({ userId });
         },
     },
     Mutation: {
