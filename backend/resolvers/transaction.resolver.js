@@ -25,6 +25,7 @@ const transactionResolver = {
             }
         },
         categoryStatistics: async (_, __, context) => {
+            console.log('here');
             if (!context.getUser()) throw new Error("Unauthorized");
             
             const userId = await context.getUser()._id;
@@ -36,9 +37,7 @@ const transactionResolver = {
                     categoryMap[transaction.category] = 0;
                 }
                 categoryMap[transaction.category] += transaction.amount;
-            })
-
-            console.log("anything")
+            });
 
             return Object.entries(categoryMap).map(([category, totalAmount]) => ({ category, totalAmount }));
         },
