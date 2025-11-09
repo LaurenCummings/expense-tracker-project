@@ -34,6 +34,7 @@ const HomePage = () => {
 	});
 
 	const { data } = useQuery(GET_TRANSACTION_STATISTICS);
+	console.log("category statistic:", data);
 
 	const handleLogout = async () => {
 		try {
