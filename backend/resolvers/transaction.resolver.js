@@ -36,6 +36,8 @@ const transactionResolver = {
                 }
                 categoryMap[transaction.category] += transaction.amount;
             })
+
+            return Object.entries(categoryMap).map(([category, amount]) => ({ category, amount }));
         },
     },
     Mutation: {
