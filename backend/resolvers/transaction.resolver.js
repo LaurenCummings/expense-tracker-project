@@ -25,6 +25,8 @@ const transactionResolver = {
         },
         categoryStatistics: async (_, __, context) => {
             if (!context.getUser()) throw new Error("Unauthorized");
+            
+            const userId = context.getUser()._id;
         },
     },
     Mutation: {
