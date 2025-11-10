@@ -40,6 +40,8 @@ const HomePage = () => {
 		if (data?.categoryStatistics){
 			const categories = data.categoryStatistics.map((stat) => stat.category);
 			const totalAmounts = data.categoryStatistics.map((stat) => stat.totalAmount);
+
+			const backgroundColors = [];
 		}
 	}, [data]);
 
