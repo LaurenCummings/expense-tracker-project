@@ -16,7 +16,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const HomePage = () => {
 	const { data } = useQuery(GET_TRANSACTION_STATISTICS);
 
-	const chartData = {
+	const chartData = useState ({
 		labels: ["Saving", "Expense", "Investment"],
 		datasets: [
 			{
@@ -30,7 +30,7 @@ const HomePage = () => {
 				cutout: 130,
 			},
 		],
-	};
+	});
 
 	const [logout, {loading, client}] = useMutation(LOGOUT, {
 		refetchQueries: ["GetAuthenticatedUser"],
