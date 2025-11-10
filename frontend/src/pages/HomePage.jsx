@@ -42,6 +42,7 @@ const HomePage = () => {
 			const totalAmounts = data.categoryStatistics.map((stat) => stat.totalAmount);
 
 			const backgroundColors = [];
+			const borderColors = [];
 		}
 	}, [data]);
 
