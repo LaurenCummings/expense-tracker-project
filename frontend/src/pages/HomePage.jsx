@@ -39,6 +39,7 @@ const HomePage = () => {
 	useEffect(() => {
 		if (data?.categoryStatistics){
 			const categories = data.categoryStatistics.map((stat) => stat.category);
+			const totalAmounts = data.categoryStatistics.map((stat) => stat.totalAmount);
 		}
 	}, [data]);
 
