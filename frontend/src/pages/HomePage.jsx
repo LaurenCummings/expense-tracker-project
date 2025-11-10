@@ -36,7 +36,11 @@ const HomePage = () => {
 		],
 	});
 
-
+	useEffect(() => {
+		if (data?.categoryStatistics){
+			const categories = data.categoryStatistics.map((stat) => stat.category);
+		}
+	}, [data]);
 
 	const handleLogout = async () => {
 		try {
