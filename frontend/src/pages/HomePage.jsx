@@ -16,6 +16,10 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 const HomePage = () => {
 	const { data } = useQuery(GET_TRANSACTION_STATISTICS);
 
+	const [logout, {loading, client}] = useMutation(LOGOUT, {
+		refetchQueries: ["GetAuthenticatedUser"],
+	});	
+
 	const chartData = useState ({
 		labels: [],
 		datasets: [
@@ -32,9 +36,7 @@ const HomePage = () => {
 		],
 	});
 
-	const [logout, {loading, client}] = useMutation(LOGOUT, {
-		refetchQueries: ["GetAuthenticatedUser"],
-	});
+
 
 	const handleLogout = async () => {
 		try {
