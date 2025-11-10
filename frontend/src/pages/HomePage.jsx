@@ -17,13 +17,13 @@ const HomePage = () => {
 	const { data } = useQuery(GET_TRANSACTION_STATISTICS);
 
 	const chartData = useState ({
-		labels: ["Saving", "Expense", "Investment"],
+		labels: [],
 		datasets: [
 			{
 				label: "%",
-				data: [13, 8, 3],
-				backgroundColor: ["rgba(75, 192, 192)", "rgba(255, 99, 132)", "rgba(54, 162, 235)"],
-				borderColor: ["rgba(75, 192, 192)", "rgba(255, 99, 132)", "rgba(54, 162, 235, 1)"],
+				data: [],
+				backgroundColor: [],
+				borderColor: [],
 				borderWidth: 1,
 				borderRadius: 30,
 				spacing: 10,
