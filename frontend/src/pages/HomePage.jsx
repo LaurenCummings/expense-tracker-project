@@ -9,15 +9,12 @@ import toast from "react-hot-toast";
 import { useMutation, useQuery } from "@apollo/client/react";
 import { LOGOUT } from "../graphql/mutations/user.mutation";
 import { GET_TRANSACTION_STATISTICS } from "../graphql/queries/transaction.query";
-import { GET_AUTHENTICATED_USER } from "../graphql/queries/user.query";
 import { useState } from "react";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const HomePage = () => {
 	const { data } = useQuery(GET_TRANSACTION_STATISTICS);
-	console.log("categoryStatistics", data);
-	// const { data: authUserData } = useQuery(GET_AUTHENTICATED_USER);
 
 	const chartData = {
 		labels: ["Saving", "Expense", "Investment"],
