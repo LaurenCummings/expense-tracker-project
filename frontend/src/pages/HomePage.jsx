@@ -43,6 +43,19 @@ const HomePage = () => {
 
 			const backgroundColors = [];
 			const borderColors = [];
+
+			categories.forEach(category => {
+				if (category === "saving") {
+					backgroundColors.push("rgba(75, 192, 192)");
+					borderColors.push("rgba(75, 192, 192");
+				} else if (category === "expense") {
+					backgroundColors.push("rgba(255, 99, 132)");
+					borderColors.push("rgba(255, 99, 132)");
+				} else if (category === "investment") {
+					backgroundColors.push("rgba(54, 162, 235)");
+					borderColors.push("rgba(54, 162, 235)");
+				}
+			})
 		}
 	}, [data]);
 
