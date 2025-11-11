@@ -20,7 +20,7 @@ const HomePage = () => {
 		refetchQueries: ["GetAuthenticatedUser"],
 	});	
 
-	const chartData = useState ({
+	const [chartData, setChartData] = useState ({
 		labels: [],
 		datasets: [
 			{
@@ -56,6 +56,15 @@ const HomePage = () => {
 					borderColors.push("rgba(54, 162, 235)");
 				}
 			})
+
+			// setChartData(prev => ({
+			// 	labels: categories,
+			// 	datasets:[
+			// 		{
+			// 			...
+			// 		}
+			// 	]
+			// })
 		}
 	}, [data]);
 
