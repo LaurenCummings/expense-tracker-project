@@ -41,7 +41,7 @@ const TransactionPage = () => {
 				}
 			})
 			toast.success("Transaction updated successfully");
-			// navigate("/");
+			navigate("/");
 		} catch (err) {
 			toast.error(err.message);
 		}
