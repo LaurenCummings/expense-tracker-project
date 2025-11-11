@@ -57,14 +57,17 @@ const HomePage = () => {
 				}
 			})
 
-			// setChartData(prev => ({
-			// 	labels: categories,
-			// 	datasets:[
-			// 		{
-			// 			...
-			// 		}
-			// 	]
-			// })
+			setChartData(prev => ({
+				labels: categories,
+				datasets:[
+					{
+						...prev.datasets[0],
+						data: totalAmounts,
+						backgroundColor: backgroundColors,
+						borderColor: borderColors
+					}
+				]
+			}))
 		}
 	}, [data]);
 
