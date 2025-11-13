@@ -87,8 +87,17 @@ const userResolver = {
                 throw new Error(err.message || "Error getting user");
             }
         },
-        // TODO => ADD USER/TRANSACTION RELATIONSHIP
     },
+    User: {
+        transactions:async (parent) => {
+            try {
+
+            } catch (err) {
+                console.log("Error in user.transactions resolver: ", err);
+                throw new Error(err.message || "Internal server error");
+            }
+        }
+    }
 };
 
 export default userResolver;
