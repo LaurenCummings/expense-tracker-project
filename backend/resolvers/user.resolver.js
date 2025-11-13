@@ -92,7 +92,7 @@ const userResolver = {
     User: {
         transactions:async (parent) => {
             try {
-                // const transactions = await Transaction.find({us})
+                const transactions = await Transaction.find({user:parent._id})
             } catch (err) {
                 console.log("Error in user.transactions resolver: ", err);
                 throw new Error(err.message || "Internal server error");
