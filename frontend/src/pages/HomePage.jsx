@@ -9,6 +9,7 @@ import toast from "react-hot-toast";
 import { useMutation, useQuery } from "@apollo/client/react";
 import { LOGOUT } from "../graphql/mutations/user.mutation";
 import { GET_TRANSACTION_STATISTICS } from "../graphql/queries/transaction.query";
+import { GET_AUTHENTICATED_USER } from "../graphql/queries/user.query";
 import { useEffect, useState } from "react";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
