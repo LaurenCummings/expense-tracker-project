@@ -18,6 +18,15 @@ export const GET_USER_AND_TRANSACTIONS = gql`
             name
             username
             profilePicture
+            transactions {
+                _id
+                description
+                paymentType
+                category
+                amount
+                location
+                date
+            }
         }
     }
 `;
