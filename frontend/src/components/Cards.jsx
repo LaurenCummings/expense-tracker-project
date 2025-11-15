@@ -5,7 +5,8 @@ import { useQuery } from "@apollo/client/react";
 
 const Cards = () => {
 	const { data, loading, error } = useQuery(GET_TRANSACTIONS);
-
+	const { data:authUser } = useQuery(GET_AUTHENTICATED_USER);
+	
 	const { data:userAndTransactions } = useQuery(GET_USER_AND_TRANSACTIONS, {
 		variables: {
 			userId: 
