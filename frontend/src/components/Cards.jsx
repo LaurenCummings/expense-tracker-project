@@ -7,6 +7,8 @@ const Cards = () => {
 	const { data, loading, error } = useQuery(GET_TRANSACTIONS);
 	const { data:userAndTransactions } = useQuery(GET_USER_AND_TRANSACTIONS);
 
+	console.log("userAndTransactions:", userAndTransactions);
+
 	if (error) return <p>Error: {error.message}</p>
 	if (loading) return <p>Loading...</p>
 
