@@ -1,4 +1,5 @@
 import { GET_TRANSACTIONS } from "../graphql/queries/transaction.query";
+import { GET_USER_AND_TRANSACTIONS } from "../graphql/queries/user.query";
 import Card from "./Card";
 import { useQuery } from "@apollo/client/react";
 
