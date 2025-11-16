@@ -17,7 +17,7 @@ const categoryColorMap = {
 	// Add more categories and corresponding color classes as needed
 };
 
-const Card = ({ transaction }) => {
+const Card = ({ transaction, authUser }) => {
 	let { category, amount, location, date, paymentType, description } = transaction;
 	const cardClass = categoryColorMap[category];
 	const [deleteTransaction, {loading}] = useMutation(DELETE_TRANSACTION, {
