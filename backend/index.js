@@ -23,6 +23,7 @@ import { configurePassport } from "./passport/passport.config.js";
 dotenv.config();
 configurePassport();
 
+const __dirname = path.resolve();
 const app = express();
 const httpServer = http.createServer(app);
 
@@ -77,7 +78,7 @@ app.use(
     }),
 );
 
-// app.use(express.static())
+// app.use(express.static(path.join(__)))
 
 // Modified server startup
 await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
