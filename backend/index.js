@@ -2,6 +2,7 @@ import express from "express";
 import http from "http";
 import cors from "cors";
 import dotenv from "dotenv";
+import path from "path";
 
 import passport from "passport";
 import session from "express-session";
@@ -75,6 +76,8 @@ app.use(
         context: async ({ req, res }) => buildContext({ req, res }),
     }),
 );
+
+// app.use(express.static())
 
 // Modified server startup
 await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
