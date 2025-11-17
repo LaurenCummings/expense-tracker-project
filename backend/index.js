@@ -78,7 +78,7 @@ app.use(
     }),
 );
 
-// app.use(express.static(path.join(__)))
+app.use(express.static(path.join(__dirname, "frontend/dist")));
 
 // Modified server startup
 await new Promise((resolve) => httpServer.listen({ port: 4000 }, resolve));
