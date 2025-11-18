@@ -81,7 +81,7 @@ app.use(
 // npm run build will build frontend app, and it will be the optimized version
 app.use(express.static(path.join(__dirname, "frontend/dist")));
 
-app.get("*", (req, res) => {
+app.get("/{*any}", (req, res) => {
     res.sendFile(path.join(__dirname, "frontend/dist", "index.html"));
 })
 
