@@ -24,6 +24,8 @@ import job from './cron.js';
 dotenv.config();
 configurePassport();
 
+job.start();
+
 const __dirname = path.resolve();
 const app = express();
 const httpServer = http.createServer(app);
